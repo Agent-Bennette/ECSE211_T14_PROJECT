@@ -4,8 +4,8 @@ import static ca.mcgill.ecse211.t14.Resources.*;
 import java.text.DecimalFormat;
 
 /**
- * Output based not on confidence of probability density functions, but on how many
- * standard deviations away the input colours are from each known colour.
+ * Output based not on confidence of probability density functions, but on how
+ * many standard deviations away the input colours are from each known colour.
  * Arbitrates between different colours - ie, given input Red, Green, and Blue
  * data, figures out what colour the detected colour is. Communication of
  * resulting colour is dealt in the Colour enumeration.
@@ -47,12 +47,12 @@ public class ColourArbiter implements Runnable {
 
 	/**
 	 * Returns the colour which most closesly resembles the provided colour based on
-	 * how many standard deviations in varies from known colours' means in red, green
-	 * and blue channels.
-	 * You feed in RGB Values in the form of a ColourRGB instance; this method
-	 * returns you what Colour it believes those values belong to. If it doesn't
-	 * find the colour is like any of the colours it knows of - ie they are out of
-	 * tolerances - then the method returns null as an "I don't know" response.
+	 * how many standard deviations in varies from known colours' means in red,
+	 * green and blue channels. You feed in RGB Values in the form of a ColourRGB
+	 * instance; this method returns you what Colour it believes those values belong
+	 * to. If it doesn't find the colour is like any of the colours it knows of - ie
+	 * they are out of tolerances - then the method returns null as an "I don't
+	 * know" response.
 	 * 
 	 * @param rgbValues
 	 * @return
@@ -64,14 +64,16 @@ public class ColourArbiter implements Runnable {
 		double lowestDeviationsToColour = Double.MAX_VALUE;
 		for (Colour nextColour : Colour.values()) {
 			double deviationsToNextColour = 0;
-			for( int c = 0 ; c < rgbValues.length ; c++ ) {
-			  double stdDeviationsInThisChannel = Math.abs( rgbValues[c] - RGB_AVERAGES_OF_COLOURS[colourToInt(nextColour)][c]);
-			  stdDeviationsInThisChannel /= RGB_VARIANCES_OF_COLOURS[colourToInt(nextColour)][c];
-			  stdDeviationsInThisChannel = Math.pow(stdDeviationsInThisChannel, 2);
-			  deviationsToNextColour += stdDeviationsInThisChannel;
+			for (int c = 0; c < rgbValues.length; c++) {
+				double stdDeviationsInThisChannel = Math
+						.abs(rgbValues[c] - RGB_AVERAGES_OF_COLOURS[colourToInt(nextColour)][c]);
+				stdDeviationsInThisChannel /= RGB_VARIANCES_OF_COLOURS[colourToInt(nextColour)][c];
+				stdDeviationsInThisChannel = Math.pow(stdDeviationsInThisChannel, 2);
+				deviationsToNextColour += stdDeviationsInThisChannel;
 			}
 			deviationsToNextColour = Math.sqrt(deviationsToNextColour);
-			debugString = debugString + nextColour.toString() + ":" + numberFormat.format(deviationsToNextColour) + "\t";
+			debugString = debugString + nextColour.toString() + ":" + numberFormat.format(deviationsToNextColour)
+					+ "\t";
 			if (deviationsToNextColour < lowestDeviationsToColour) {
 				closestColour = nextColour;
 				lowestDeviationsToColour = deviationsToNextColour;
@@ -81,9 +83,10 @@ public class ColourArbiter implements Runnable {
 		if (DEBUG_SWITCH) {
 			System.out.println(debugString);
 		}
-		// If the probability of it being a match is sufficiently high, return the colour; otherwise null.
-		if (lowestDeviationsToColour < COLOUR_MAX_DEVIATIONS_FOR_CLASSIFICATION ) {
-		  return closestColour;
+		// If the probability of it being a match is sufficiently high, return the
+		// colour; otherwise null.
+		if (lowestDeviationsToColour < COLOUR_MAX_DEVIATIONS_FOR_CLASSIFICATION) {
+			return closestColour;
 		}
 		return null;
 
@@ -116,10 +119,11 @@ public class ColourArbiter implements Runnable {
 		float[] rgb = new float[3];
 		FRONT_COLOUR_SENSOR.fetchSample(rgb, 0);
 		Colour clr = whatColourIsThis(rgb);
-		if(!DEBUG_SWITCH) {
-          String outputString = rgb[0] + "\t" + rgb[1] + "\t" + rgb[2] + "\t" + ((clr == null) ? "null" : clr.toString());
-          System.out.println(outputString);
-        }
+		if (!DEBUG_SWITCH) {
+			String outputString = rgb[0] + "\t" + rgb[1] + "\t" + rgb[2] + "\t"
+					+ ((clr == null) ? "null" : clr.toString());
+			System.out.println(outputString);
+		}
 		return clr;
 	}
 
