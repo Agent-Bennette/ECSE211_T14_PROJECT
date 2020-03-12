@@ -20,7 +20,7 @@ public class Localizer {
 	 * @author ANDREW TA
 	 * executes initial localization
 	 */
-	public void initializePosition() {
+	public static void initializePosition() {
 		doUSLocalization(); //perform ultrasonic sensor localization to get the robot to 0 angle
 		doLightLocalization(); // perform light localization to get the robot to (1,1) point
 	}
@@ -31,7 +31,7 @@ public class Localizer {
 	 * turn the robot around to find alpha beta angle
 	 * then turn it to the right angle
 	 */
-	private void doUSLocalization() {
+	private static void doUSLocalization() {
 		
 	}
 	
@@ -42,7 +42,7 @@ public class Localizer {
 	 * then perform light localization so that 
 	 * the center of the robot is at (1,1) after localization
 	 */
-	private void doLightLocalization() {
+	private static void doLightLocalization() {
 		
 	}
 
@@ -53,7 +53,7 @@ public class Localizer {
 	 * an intersection is true. Assumption: The robot's orientation is at an error
 	 * of less than 15 degrees plus or minus.
 	 */
-	public void localizeAtWayPoint() {
+	public static void localizeAtWayPoint() {
 		
 	}
 	
@@ -61,7 +61,7 @@ public class Localizer {
 	 * helper function for light localization
 	 * @return a boolean that specifies if the robot detects a line or not
 	 */
-	private boolean lightLocalizationHelper() {
+	private static boolean lightLocalizationHelper() {
 		return true;
 	}
 
