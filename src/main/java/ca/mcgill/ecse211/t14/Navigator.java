@@ -92,7 +92,7 @@ public class Navigator implements Runnable {
 	/**
 	 * @author ANDREW TA
 	 * set the speed of the motors
-	 * @param speed
+	 * @param speed provided speed
 	 */
 	public static void setSpeed(int speed) {
 		setSpeeds(speed, speed);
@@ -101,8 +101,8 @@ public class Navigator implements Runnable {
 	/**
 	 * @author ANDREW TA
 	 * helper function to set speed of the motors
-	 * @param leftSpeed
-	 * @param rightSpeed
+	 * @param leftSpeed provided left speed
+	 * @param rightSpeed provided right speed
 	 */
 	public static void setSpeeds(int leftSpeed, int rightSpeed) {
 		
@@ -111,7 +111,7 @@ public class Navigator implements Runnable {
 	/**
 	 * @author ANDREW TA
 	 * set acceleration of the motor
-	 * @param acceleration
+	 * @param acceleration provided acceleration
 	 */
 	public static void setAcceleration(int acceleration) {
 		
@@ -129,7 +129,7 @@ public class Navigator implements Runnable {
 	/**
 	 * @author ANDREW TA
 	 * rotates the robot about an angle given
-	 * @param angle
+	 * @param angle provided angle
 	 */
 	public static void turnAngle(double angle) {
 		

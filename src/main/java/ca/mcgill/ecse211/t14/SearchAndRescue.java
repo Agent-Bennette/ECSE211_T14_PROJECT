@@ -1,5 +1,11 @@
 package ca.mcgill.ecse211.t14;
 
+/**
+ * this class provides methods to search and rescue the stranded vehicle
+ * it also provides methods to avoid obstacles
+ * @author ANDREW TA
+ * 
+ */
 public class SearchAndRescue {
 	/**
 	 * does the us scanning and light scanning to search 

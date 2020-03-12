@@ -6,6 +6,10 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ *
+ *this class implements the odometer system of the robot 
+ */
 public class Odometer implements Runnable {
 
 	/**
