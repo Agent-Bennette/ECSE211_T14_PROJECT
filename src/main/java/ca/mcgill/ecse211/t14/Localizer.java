@@ -49,11 +49,11 @@ public class Localizer {
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * Perform light localization at a way point. Assumption: The robot does
 	 * not veer off the course so much that the robot's assumption that it is near
 	 * an intersection is true. Assumption: The robot's orientation is at an error
 	 * of less than 15 degrees plus or minus.
+	 * @author ANDREW TA
 	 */
 	public static void localizeAtWayPoint() {
 		

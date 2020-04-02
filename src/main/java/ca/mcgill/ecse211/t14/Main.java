@@ -12,8 +12,7 @@ import lejos.hardware.Button;
 public class Main {
 
 	/**
-	 * The main entry point.
-	 * The main function first starts the <code>Odometer</code>, <code>LineWatcher</code>, and <code>UltrasonicWatcher</code> threads. 
+	 * The main entry point. The main function first starts the <code>Odometer</code>, <code>LineWatcher</code>, and <code>UltrasonicWatcher</code> threads.
 	 * The <code>Odometer</code> thread keeps track of the robot's positions and orientation.
 	 * The <code>UltrasonicWatcher</code> thread is responsible for driving the usSensor.
 	 * the <code>LineWatcher</code> thread is responsible for driving the light sensors.
