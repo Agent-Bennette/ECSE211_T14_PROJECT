@@ -31,14 +31,16 @@ public class SearchAndRescue {
 	 * 
 	 * @author SEAN TAN
 	 * @return <code>true</code> if the attachment point is located successfully; <code>false</code> otherwise.
-	 * 
 	 */
 	public static boolean locateAttachmentPoint() {
-		
+		return true;
 	}
 	
 	/**
-	 * This method 
+	 * This method positions the robot over the stranded cart such that it is able to continue navigating with the cart captured inside.
+	 * Upon completion of <code>locateAttachmentPoint()</code>, the robot positions itself such that the front opening is aligned with the cart.
+	 * The robot opens the door to the containment area, then using the ultrasonic sensor to determine the distance from the cart, the robot drives forward a certain distance until the cart is completely enclosed under the robot.
+	 * The robot then closes the door to the containment area thus securing the cart inside. Using the coordinates provided, the robot then navigates back to the starting point with the cart secured.
 	 * 
 	 * @author SEAN TAN
 	 */
@@ -47,36 +49,36 @@ public class SearchAndRescue {
 	}
 	
 	/**
-	 * does the us scanning to look for any obstacles
-	 * @return a boolean set to true if an obstacle is detected
-	 */
-	public static boolean detectObstacle() {
-		
-		
-		
-		return true;
-	}
-	
-	/**
 	 * This method navigates the robot around any detected object, not including the stranded cart, in order to avoid collision.
 	 * Utilizing a bang-bang controller method, the error <code>distError</code> is computed by finding the difference between ideal <code>MIN_DIST</code> and the actual distance.
 	 * By comparing the <code>distError</code> with threshold values, four cases are implemented: (1) the robot is on the correct heading, (2) the robot is extremely close to collision, (3) the robot is too far from the object and (4) the robot is too close to the object.
 	 * Based on which case the robot is currently in with respect to the object, the necessary maneuvers are executed such that the robot remains at a comfortable distance away from the object.
-	 * 
-	 * 
-	 * <br>(Similar to the implementation logic for Lab 1 - Wall Follower.)</br>
+	 * Once <code>detectObstacle()</code> returns false and <code>readUSDistance()</code> is at a maximum, the robot has successfully clear of the object and can proceed on its course. (Similar to the implementation logic for Lab 1 - Wall Follower).
 	 * 
 	 * @author SEAN TAN
-	 * 
 	 */
 	public static void avoidObstacle() {
 		
 	}
 	
+	/**
+	   * This method returns the filtered distance between the obstacle and the ultrasonic sensor in cm.
+	   * 
+	   * @author SEAN TAN (based on Lab 1)
+	   * @return the filtered distance between the obstacle and the ultrasonic sensor in cm
+	   */
 	public int readUSDistance(){
 		return filter((int) data);
 	}
 	
+	
+	/**
+	 * This method throws away invalid distance samples read by the ultrasonic sensor that correspond to a null signal.
+	 * 
+	 * @author SEAN TAN (based on Lab 1 code)
+	 * @param distance raw distance measured by the ultrasonic sensor in cm
+	 * @return the filtered distance in cm
+	 */
 	int filter(int distance) {
 		return distance;
 	}
