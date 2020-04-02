@@ -11,10 +11,16 @@ public class Main {
 
 	/**
 	 * The main entry point.
-	 * 
+	 * The main function first starts the odometer, linewatcher, and ultrasonicwatcher threads. 
+	 * The odometer thread keeps track of the robot's positions and orientation.
+	 * The ultrasonicwatcher thread is responsible for driving the ussensor.
+	 * the linewatcher thread is responsible for driving the light sensors.
+	 * After that, main runs Navigator threads to complete the robot's mission.
 	 * @param args not used
 	 */
 	public static void main(String[] args) {
+		//test wifi
+		System.out.println(szg.ll.x);
 
 		//Escape method
 		while (Button.waitForAnyPress() != Button.ID_ESCAPE) {
