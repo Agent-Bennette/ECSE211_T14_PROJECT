@@ -64,8 +64,8 @@ public class Navigator implements Runnable {
 	}
 	
 	/**
-	 * @author ANDREW TA
 	 * drives the robot the a specific point
+	 * @author ANDREW TA
 	 * @param x x coordinate of the destination
 	 * @param y y coordinate of the destination
 	 */
@@ -75,8 +75,8 @@ public class Navigator implements Runnable {
 	}
 	
 	/**
-	 * @author ANDREW TA
 	 * drives the robots so that it points to a specific point
+	 * @author ANDREW TA
 	 * @param x x coordinate of the destination
 	 * @param y y coordinate of the destination
 	 */
@@ -86,16 +86,16 @@ public class Navigator implements Runnable {
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * stop all motors
+	 * @author ANDREW TA
 	 */
 	public static void stopMotors() {
 		
 	}
 
 	/**
+	 * set the speed of the motors 
 	 * @author ANDREW TA
-	 * set the speed of the motors
 	 * @param speed provided speed
 	 */
 	public static void setSpeed(int speed) {
@@ -103,18 +103,18 @@ public class Navigator implements Runnable {
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * helper function to set speed of the motors
+	 * @author ANDREW TA
 	 * @param leftSpeed provided left speed
 	 * @param rightSpeed provided right speed
 	 */
-	public static void setSpeeds(int leftSpeed, int rightSpeed) {
+	private static void setSpeeds(int leftSpeed, int rightSpeed) {
 		
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * set acceleration of the motor
+	 * @author ANDREW TA
 	 * @param acceleration provided acceleration
 	 */
 	public static void setAcceleration(int acceleration) {
@@ -122,8 +122,8 @@ public class Navigator implements Runnable {
 	}
 
 	/**
+	 * rotates the robot
 	 * @author ANDREW TA
-	 * rotate the robot
 	 * @param flag which side the robot should rotate (1 for clockwise, 0 for anti-clockwise)
 	 */
 	public static void rotate(boolean flag) {
@@ -131,8 +131,8 @@ public class Navigator implements Runnable {
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * rotates the robot about an angle given
+	 * @author ANDREW TA
 	 * @param angle provided angle
 	 */
 	public static void turnAngle(double angle) {
@@ -140,8 +140,8 @@ public class Navigator implements Runnable {
 	}
 
 	/**
-	 * @author ANDREW TA
 	 * makes the robot move forward or backward
+	 * @author ANDREW TA
 	 * @param flag which way to go (1 if forward, 0 if backward)
 	 */
 	public static void moveForward(boolean flag) {

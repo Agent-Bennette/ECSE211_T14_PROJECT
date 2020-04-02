@@ -17,9 +17,11 @@ public class Localizer {
 	// ------------------------
 
 	/**
-	 * @author ANDREW TA
 	 * executes initial localization
-	 * this methods will call two extra function to perform ulstrasonic localization and light localization
+	 * this methods calls two functions <code>doUsLocalization</code> and <code>doLightLocalization</code>
+	 * to perform ulstrasonic localization and light localization
+	 * @author ANDREW TA
+	 * 
 	 */
 	public static void initializePosition() {
 		doUSLocalization(); //perform ultrasonic sensor localization to get the robot to 0 angle
@@ -27,21 +29,20 @@ public class Localizer {
 	}
 	
 	/**
+	 * turns the robot around to find alpha beta angle
+	 * then turns it to the right angle
 	 * @author ANDREW TA
-	 * 
-	 * turn the robot around to find alpha beta angle
-	 * then turn it to the right angle
 	 */
 	private static void doUSLocalization() {
 		
 	}
 	
 	/**
-	 * @author ANDREW TA
-	 * 
 	 * move the robot to (1,1) point 
 	 * then perform light localization so that 
 	 * the center of the robot is at (1,1) after localization
+	 * @author ANDREW TA
+	 *
 	 */
 	private static void doLightLocalization() {
 		
