@@ -14,7 +14,6 @@ import ca.mcgill.ecse211.t14.playingfield.Region;
  * 
  * @author Edwin Pan
  *
- * {@link java.lang.Thread}
  */
 public class Navigator implements Runnable {
 

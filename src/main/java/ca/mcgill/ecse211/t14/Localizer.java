@@ -19,6 +19,7 @@ public class Localizer {
 	/**
 	 * @author ANDREW TA
 	 * executes initial localization
+	 * this methods will call two extra function to perform ulstrasonic localization and light localization
 	 */
 	public static void initializePosition() {
 		doUSLocalization(); //perform ultrasonic sensor localization to get the robot to 0 angle
