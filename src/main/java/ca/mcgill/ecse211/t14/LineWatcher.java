@@ -23,7 +23,7 @@ import static ca.mcgill.ecse211.t14.Resources.RIGHT_LIGHT_SAMPLER;
  * for this condition) or if a line was never detected.
  * 
  * @author of interface Edwin Pan
- *
+ * {@link java.lang.Thread}
  */
 public class LineWatcher implements Runnable {
 

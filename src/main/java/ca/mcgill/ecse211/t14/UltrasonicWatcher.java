@@ -15,7 +15,7 @@ import java.lang.Runnable;
  * angle a measurement was made and the measurement together.
  * 
  * @author of interface: Edwin Pan
- *
+ * {@link java.lang.Thread}
  */
 public class UltrasonicWatcher implements Runnable {
 

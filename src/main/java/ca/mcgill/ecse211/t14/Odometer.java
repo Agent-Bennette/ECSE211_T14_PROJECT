@@ -8,7 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  *
- *this class implements the odometer system of the robot 
+ * this class implements the odometer system of the robot 
+ * {@link java.lang.Thread}
  */
 public class Odometer implements Runnable {
 
