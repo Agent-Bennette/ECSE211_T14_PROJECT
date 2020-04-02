@@ -68,7 +68,8 @@ public class SearchAndRescue {
 	   * @return the filtered distance between the obstacle and the ultrasonic sensor in cm
 	   */
 	public int readUSDistance(){
-		return filter((int) data);
+		//call filter
+		return 0;
 	}
 	
 	
