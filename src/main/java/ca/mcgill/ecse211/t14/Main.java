@@ -2,6 +2,10 @@ package ca.mcgill.ecse211.t14;
 
 //static import to avoid duplicating variables and make the code easier to read
 import static ca.mcgill.ecse211.t14.Resources.*;
+
+import javax.sound.sampled.Line;
+
+import ca.mcgill.ecse211.t14.Navigator.MissionStatus;
 import lejos.hardware.Button;
 
 /**
@@ -20,9 +24,27 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		//test wifi
-		System.out.println(szg.ll.x);
+		//System.out.println(szg.ll.x);
 
-		//Escape method
+		//wait for start button to be pressed
+		Button.waitForAnyPress();
+		
+		//the robot then wait for all parameters to be downloaded from server
+		
+		//start the odometer, linewatcher and ulstrasonicwatcher threads
+		new Thread(odo).start();
+		LineWatcher line = new LineWatcher();
+		LineWatcher leftSensor = line.getLeftLineWatcher();
+		LineWatcher rightSensor = line.getRightLineWatcher();
+		new Thread(line).start();
+		UltrasonicWatcher usSensor = new UltrasonicWatcher();
+		new Thread(usSensor).start();
+		
+		//start the navigator thread 
+		Navigator nav = new Navigator(MissionStatus.LocalizingInitially, red, green);
+		new Thread(nav).start();
+		
+		//wait until user wants to end the program
 		while (Button.waitForAnyPress() != Button.ID_ESCAPE) {
 			// Empty
 		}

@@ -5,6 +5,8 @@ package ca.mcgill.ecse211.t14;
 
 import java.lang.Runnable;
 
+import ca.mcgill.ecse211.t14.playingfield.Region;
+
 /**
  * Main brain of the system. Contains a state machine and executes specific
  * robot movements based on said states, which is basically the entire robot's
@@ -19,7 +21,7 @@ public class Navigator implements Runnable {
 	// ENUMERATIONS
 	// ------------------------
 
-	public enum MissionStatus {
+	public static enum MissionStatus {
 		AwaitingMapParametres, LocalizingInitially, FindingAndCrossingBridge, LocatingVehicle, AttachingToVehicle,
 		FindingAndCrossingBridgeAgain, NavigatingToFinalPosition
 	}
@@ -32,14 +34,14 @@ public class Navigator implements Runnable {
 	private MissionStatus missionStatus;
 
 	// Navigator Associations
-	private Map redMap;
-	private Map greenMap;
+	private Region redMap;
+	private Region greenMap;
 
 	// ------------------------
 	// CONSTRUCTOR
 	// ------------------------
 
-	public Navigator(MissionStatus aMissionStatus, Map aRedMap, Map aGreenMap) {
+	public Navigator(MissionStatus aMissionStatus, Region aRedMap, Region aGreenMap) {
 		super();
 		missionStatus = aMissionStatus;
 		redMap = aRedMap;
@@ -68,7 +70,8 @@ public class Navigator implements Runnable {
 	 * @param y y coordinate of the destination
 	 */
 	public void travelTo(double x, double y) {
-		
+		//compute the distance to travel
+		//call motor.rotate() to travel to the destination
 	}
 	
 	/**
@@ -78,7 +81,8 @@ public class Navigator implements Runnable {
 	 * @param y y coordinate of the destination
 	 */
 	public void turnTo(double x, double y) {
-		
+		//compute the angle 
+		//call motor.rotate()
 	}
 
 	/**

@@ -46,6 +46,8 @@ public class LineWatcher implements Runnable {
 	// CONSTRUCTOR
 	// ------------------------
 
+	public LineWatcher() {}
+	
 	private LineWatcher(SensorMode lineSensor) {
 		super();
 		light_sensor = lineSensor;
