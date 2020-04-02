@@ -83,6 +83,16 @@ public class Resources {
 	 * object distance
 	 */
 	public static final int MIN_DIST = 2;
+	
+	/**
+	 * object detection distance
+	 */
+	public static final int OBJECT_DETECTION_THRESHOLD = 10;
+	
+	/**
+	 * object detection distance
+	 */
+	public static final int CART_DETECTION_ANGLE= 60;
 
 	/**
 	 * max distance
