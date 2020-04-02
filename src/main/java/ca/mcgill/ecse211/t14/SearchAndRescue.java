@@ -33,13 +33,14 @@ public class SearchAndRescue {
 	 * @return <code>true</code> if the attachment point is located successfully; <code>false</code> otherwise.
 	 * 
 	 */
-	public static void locateAttachmentPoint() {
+	public static boolean locateAttachmentPoint() {
 		
 	}
 	
 	/**
-	 * aligns the robot to correct angles and position before
-	 * pulling the cart inside
+	 * This method 
+	 * 
+	 * @author SEAN TAN
 	 */
 	public static void rescueTheCart() {
 		
@@ -57,9 +58,27 @@ public class SearchAndRescue {
 	}
 	
 	/**
-	 * move away from the obstacles if any is detected
+	 * This method navigates the robot around any detected object, not including the stranded cart, in order to avoid collision.
+	 * Utilizing a bang-bang controller method, the error <code>distError</code> is computed by finding the difference between ideal <code>MIN_DIST</code> and the actual distance.
+	 * By comparing the <code>distError</code> with threshold values, four cases are implemented: (1) the robot is on the correct heading, (2) the robot is extremely close to collision, (3) the robot is too far from the object and (4) the robot is too close to the object.
+	 * Based on which case the robot is currently in with respect to the object, the necessary maneuvers are executed such that the robot remains at a comfortable distance away from the object.
+	 * 
+	 * 
+	 * <br>(Similar to the implementation logic for Lab 1 - Wall Follower.)</br>
+	 * 
+	 * @author SEAN TAN
+	 * 
 	 */
 	public static void avoidObstacle() {
 		
 	}
+	
+	public int readUSDistance(){
+		return filter((int) data);
+	}
+	
+	int filter(int distance) {
+		return distance;
+	}
+	
 }
