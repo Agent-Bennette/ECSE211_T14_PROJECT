@@ -45,7 +45,7 @@ public class ColourArbiter implements Runnable {
 	}
 
 	/**
-	 * Returns the colour which most closesly resembles the provided colour based on
+	 * This method returns the colour which most closesly resembles the provided colour based on
 	 * how many standard deviations in varies from known colours' means in red,
 	 * green and blue channels. You feed in RGB Values in the form of a ColourRGB
 	 * instance; this method returns you what Colour it believes those values belong
@@ -54,7 +54,7 @@ public class ColourArbiter implements Runnable {
 	 * know" response.
 	 * 
 	 * @param rgbValues
-	 * @return
+	 * @return Colour BLUE, GREEN, ORANGE, YELLOW	
 	 */
 	private static Colour whatColourIsThis(float[] rgbValues) {
 		String debugString = ""; // Debugging
@@ -92,12 +92,12 @@ public class ColourArbiter implements Runnable {
 	}
 
 	/**
-	 * Synchronized method which makes a measurement of whatever the main Colour
+	 * This synchronized method makes a measurement of whatever the main Colour
 	 * Sensor is facing and returns what colour in the Colour enumeration it
 	 * recognizes. Returns null if the readings are not too dissimilar from any of
 	 * the known colours.
 	 * 
-	 * @return the classification of the colour observed by the Colour sensor.
+	 * @return Colour The classification of the colour observed by the Colour sensor.
 	 */
 	public static Colour observeColour() {
 		// Take RGB Measurements
@@ -113,6 +113,8 @@ public class ColourArbiter implements Runnable {
 	/**
 	 * Debugging method which takes a measurement from the Colour Sensor and prints
 	 * out the readings into the EV3 Console.
+	 * 
+	 * @return Colour Data from colour sensor readings
 	 */
 	private static Colour observeAndPrintColour() {
 		float[] rgb = new float[3];
