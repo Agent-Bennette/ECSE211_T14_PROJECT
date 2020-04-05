@@ -22,3 +22,5 @@ The objective of our project is to design a robot that is able to autonomously n
 The class hierarchy can be found in the `ECSE211_T14_PROJECT/src/main/java/ca/mcgill/ecse211/t14/` directory. Within each class are the associated methods of the class accompanied by full JavaDoc specification.
 
 For full API documentation, please refer to the `ECSE211_T14_PROJECT/doc` directory. This contains the class and method descriptions necessary for implementing the project to completion.
+
+Please refer to the *Software Document* for more in-depth descriptions of the implemented algorithms.
