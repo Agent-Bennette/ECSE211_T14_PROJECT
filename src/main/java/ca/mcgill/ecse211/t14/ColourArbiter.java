@@ -4,13 +4,13 @@ import static ca.mcgill.ecse211.t14.Resources.*;
 import java.text.DecimalFormat;
 
 /**
- * Output based not on confidence of probability density functions, but on how
+ * This class arbitrates between different colours - given Red, Green, and Blue input data, determines what colour the detected colour is.
+ * The output is not based on confidence of probability density functions, but on how
  * many standard deviations away the input colours are from each known colour.
- * Arbitrates between different colours - ie, given input Red, Green, and Blue
- * data, figures out what colour the detected colour is. Communication of
- * resulting colour is dealt in the Colour enumeration.
+ * Communication of resulting colour is resolved in the Colour enumeration.
  * 
- * @author Edwin
+ * @author Edwin Pan
+ * @author Sean Tan
  *
  */
 public class ColourArbiter implements Runnable {
@@ -24,13 +24,12 @@ public class ColourArbiter implements Runnable {
 	public static boolean keep_running = true;
 
 	/**
-	 * Since the means and variances are stored in a two dimensional array where the
-	 * rows represent colours and the columns represent the rgb channels, this
-	 * method exists to convert enum instances into their associated integers for
-	 * array accesses.
+	 * This method converts enumerated colour instances into their associated integers to allow for array access.
+	 * The means and variances of the input colour data are stored in a two dimensional array where the
+	 * rows represent colours and the columns represent the rgb channels.
 	 * 
 	 * @param colour
-	 * @return
+	 * @return int associated integer of colour (0=BLUE, 1=GREEN, 2=ORANGE, 3=YELLOW)
 	 */
 	static int colourToInt(Colour colour) {
 		if (colour == Colour.BLUE) {
