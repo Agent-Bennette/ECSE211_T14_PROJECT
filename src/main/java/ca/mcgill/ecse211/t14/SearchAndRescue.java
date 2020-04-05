@@ -2,8 +2,8 @@ package ca.mcgill.ecse211.t14;
 
 /**
  * This class provides methods to search and rescue the stranded vehicle and provides methods to avoid obstacles.
- * @author ANDREW TA
- * @author SEAN TAN
+ * @author Andrew Ta
+ * @author Sean Tan
  * 
  */
 public class SearchAndRescue {
@@ -16,7 +16,7 @@ public class SearchAndRescue {
 	 * Using <code>UltrasonicWatcher</code> the robot performs a sweep of the detected object. A variable <code>OBJECT_ANGLE</code>is calculated based on the rising/falling edges of when the ultrasonic sensor detects an object and when it does not.
 	 * If the computed <code>OBJECT_ANGLE</code> is within 3º of the set <code>CART_DETECTION_ANGLE</code>, then the method confirms that the detected object is the stranded vehicle. 
 	 * 
-	 * @author SEAN TAN
+	 * @author Sean Tan
 	 * @return <code>true</code> if the stranded vehicle is located successfully; <code>false</code> otherwise.
 	 * 
 	 */
@@ -30,7 +30,7 @@ public class SearchAndRescue {
 	 * Using the light sensor and <code>ColourArbiter</code>, the robot scans the detected vehicle until it identifies the <code>Colour</code> associated with the attachment point.
 	 * Assume that the attachment point has a colour associated with it in the form of coloured electrical tape.
 	 * 
-	 * @author SEAN TAN
+	 * @author Sean Tan
 	 * @return <code>true</code> if the attachment point is located successfully; <code>false</code> otherwise.
 	 */
 	public static boolean locateAttachmentPoint() {
@@ -43,7 +43,7 @@ public class SearchAndRescue {
 	 * The robot opens the door to the containment area, then using the ultrasonic sensor to determine the distance from the cart, the robot drives forward a certain distance until the cart is completely enclosed under the robot.
 	 * The robot then closes the door to the containment area thus securing the cart inside. Using the coordinates provided, the robot then navigates back to the starting point with the cart secured.
 	 * 
-	 * @author SEAN TAN
+	 * @author Sean Tan
 	 */
 	public static void rescueTheCart() {
 
@@ -56,7 +56,7 @@ public class SearchAndRescue {
 	 * Based on which case the robot is currently in with respect to the object, the necessary maneuvers are executed such that the robot remains at a comfortable distance away from the object.
 	 * Once <code>detectObstacle()</code> returns false and <code>readUSDistance()</code> is at a maximum, the robot has successfully clear of the object and can proceed on its course. (Similar to the implementation logic for Lab 1 - Wall Follower).
 	 * 
-	 * @author SEAN TAN
+	 * @author Sean Tan
 	 */
 	public static void avoidObstacle() {
 		
@@ -65,7 +65,7 @@ public class SearchAndRescue {
 	/**
 	   * This method returns the filtered distance between the obstacle and the ultrasonic sensor in cm.
 	   * 
-	   * @author SEAN TAN (based on Lab 1)
+	   * @author Sean Tan (based on Lab 1)
 	   * @return the filtered distance between the obstacle and the ultrasonic sensor in cm
 	   */
 	public int readUSDistance(){
@@ -73,11 +73,10 @@ public class SearchAndRescue {
 		return 0;
 	}
 	
-	
 	/**
 	 * This method throws away invalid distance samples read by the ultrasonic sensor that correspond to a null signal.
 	 * 
-	 * @author SEAN TAN (based on Lab 1 code)
+	 * @author Sean Tan (based on Lab 1 code)
 	 * @param distance raw distance measured by the ultrasonic sensor in cm
 	 * @return the filtered distance in cm
 	 */
