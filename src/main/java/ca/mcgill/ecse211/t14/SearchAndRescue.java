@@ -56,7 +56,7 @@ public class SearchAndRescue {
 	 * Based on which case the robot is currently in with respect to the object, the necessary maneuvers are executed such that the robot remains at a comfortable distance away from the object.
 	 * Once <code>detectObstacle()</code> returns false and <code>readUSDistance()</code> is at a maximum, the robot has successfully clear of the object and can proceed on its course. (Similar to the implementation logic for Lab 1 - Wall Follower).
 	 * 
-	 * @author Sean Tan
+	 * @author Sean Tan (based on Lab 1)
 	 */
 	public static void avoidObstacle() {
 		
@@ -76,7 +76,7 @@ public class SearchAndRescue {
 	/**
 	 * This method throws away invalid distance samples read by the ultrasonic sensor that correspond to a null signal.
 	 * 
-	 * @author Sean Tan (based on Lab 1 code)
+	 * @author Sean Tan (based on Lab 1)
 	 * @param distance raw distance measured by the ultrasonic sensor in cm
 	 * @return the filtered distance in cm
 	 */
